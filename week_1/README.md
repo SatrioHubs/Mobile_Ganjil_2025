@@ -30,7 +30,8 @@ Nullable (Opsional): String? bio; → Variabel bio boleh bernilai null.
 Pemeriksaan Wajib: Jika sebuah variabel bersifat nullable (?), Dart akan memaksa Anda untuk memeriksa apakah nilainya null sebelum Anda bisa menggunakan properti atau metodenya.
 
 code :\Mobile_Ganjil_2025\week_1\bin\null_safety.dart
-Gambar : ![](img\null_safety_hasil.png)
+
+Gambar : ![](img/null_safety_hasil.png)
 
 
 Late variable
@@ -42,6 +43,7 @@ Kapan Menggunakan late?
 Inisialisasi di initState: Sangat umum di Flutter, di mana variabel diinisialisasi di dalam method initState().
 Inisialisasi Malas (Lazy Initialization): Untuk variabel yang proses pembuatannya berat dan Anda hanya ingin membuatnya saat benar-benar dibutuhkan untuk pertama kali.
 
-Code : ![](\Mobile_Ganjil_2025\week_1\bin\late_variable.dart)
+Code : \Mobile_Ganjil_2025\week_1\bin\late_variable.dart
+
 Gambar Hasil : ![](img/late_variable_hasil.png)
 Kumpulkan jawaban Anda kepada dosen pengampu sesuai kesepakatan di kelas.
