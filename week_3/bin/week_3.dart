@@ -23,9 +23,14 @@ void main(List<String> arguments) {
 //   counter++;
 // }
 
-int counter = 70;
-do {
-  print(counter);
-  counter++;
-} while (counter < 77);
+// int counter = 70;
+// do {
+//   print(counter);
+//   counter++;
+// } while (counter < 77);
+
+//PRAKTIKUM 3
+for (int index = 10; index < 27; index++) {
+  print(index);
+}
 }

@@ -1,4 +1,4 @@
-Praktikum 1: Menerapkan Control Flows ("if/else")
+# Praktikum 1: Menerapkan Control Flows ("if/else")
 
 Langkah 1:
 Ketik atau salin kode program berikut ke dalam fungsi main().
@@ -44,7 +44,7 @@ jawab: Error karena test bukan tipe data boolean, untuk perbaikan dapat menambah
 ![](img/praktikum_1_langkah_3.png)
 
 
-Praktikum 2: Menerapkan Perulangan "while" dan "do-while"
+# Praktikum 2: Menerapkan Perulangan "while" dan "do-while"
 
 Langkah 1:
 Ketik atau salin kode program berikut ke dalam fungsi main().
@@ -72,3 +72,18 @@ do {
 Jawaban: Error dikarenakan counter is undefined yang mengakibatkan counter tidak memiliki parameter
 
 Hasil Perbaikan = ![](img/Praktikum_2_langkah_3.png)
+
+# Praktikum 3: Menerapkan Perulangan "for" dan "break-continue"
+
+Langkah 1:
+Ketik atau salin kode program berikut ke dalam fungsi main().
+```dart
+for (Index = 10; index < 27; index) {
+  print(Index);
+}
+```
+Langkah 2:
+Silakan coba eksekusi (Run) kode pada langkah 1 tersebut. Apa yang terjadi? Jelaskan! Lalu perbaiki jika terjadi error.
+
+Jawaban: Error dikarenakan tidak adanya sebuah parameter penentu tipe data dan tidak adanya postfix increment
+Hasil perbaikan: ![](img/Praktikum_3.png)
