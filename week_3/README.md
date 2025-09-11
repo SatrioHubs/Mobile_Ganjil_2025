@@ -87,3 +87,17 @@ Silakan coba eksekusi (Run) kode pada langkah 1 tersebut. Apa yang terjadi? Jela
 
 Jawaban: Error dikarenakan tidak adanya sebuah parameter penentu tipe data dan tidak adanya postfix increment
 Hasil perbaikan: ![](img/Praktikum_3.png)
+
+Langkah 3:
+Tambahkan kode program berikut di dalam for-loop, lalu coba eksekusi (Run) kode Anda.
+```dart
+If (Index == 21) break;
+Else If (index > 1 || index < 7) continue;
+print(index);
+```
+
+Apa yang terjadi ? Jika terjadi error, silakan perbaiki namun tetap menggunakan for dan break-continue.
+
+Jawaban : Error, dikarenakan ada continue dan break diluar perulangan
+
+Hasil Perubahan : ![](img/Praktikum_3_langkah_3.png)
