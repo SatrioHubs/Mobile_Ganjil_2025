@@ -1,3 +1,8 @@
+# Nama : satrio Ahmad Ramadhani
+# NIM : 2341720163
+# Kelas : 3H
+
+
 # Praktikum 1: Menerapkan Control Flows ("if/else")
 
 Langkah 1:
@@ -101,3 +106,33 @@ Apa yang terjadi ? Jika terjadi error, silakan perbaiki namun tetap menggunakan 
 Jawaban : Error, dikarenakan ada continue dan break diluar perulangan
 
 Hasil Perubahan : ![](img/Praktikum_3_langkah_3.png)
+
+# Tugas Praktikum
+```dart
+void main() {
+  String nim = "2341720163 - Satrio Ahmad Ramadhani";
+
+  for (int index = 0; index <= 201; index++) {
+    bool adalahPrima = true;
+
+    if (index <= 1) {
+      adalahPrima = false;
+    } else {
+      for (int i = 2; i * i <= index; i++) {
+        if (index % i == 0) {
+          adalahPrima = false; 
+          break; 
+        }
+      }
+    }
+
+    if (adalahPrima) {
+      print("Prima (${index}): ${nim}");
+    } else {
+      print(index);
+    }
+  }
+}
+```
+
+Hasil: ![](img/Tugas%20Praktikum.png)
