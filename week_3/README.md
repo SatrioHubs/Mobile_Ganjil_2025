@@ -1,4 +1,4 @@
-# Nama : satrio Ahmad Ramadhani
+# Nama : Satrio Ahmad Ramadhani
 # NIM : 2341720163
 # Kelas : 3H
 
