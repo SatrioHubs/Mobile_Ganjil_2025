@@ -280,3 +280,118 @@ kita melakukan print sesuai dengan urutan dari variable bukan dari elemen positi
 
 ![](img/praktikum5_6.png)
 
+
+### Tugas Praktikum
+1. Silakan selesaikan Praktikum 1 sampai 5, lalu dokumentasikan berupa screenshot hasil  pekerjaan Anda beserta penjelasannya!
+2. Jelaskan yang dimaksud Functions dalam bahasa Dart!
+    Functions dalam bahasa Dart adalah blok kode yang dapat digunakan kembali untuk menjalankan tugas tertentu. Function menerima input (parameter), melakukan proses, dan dapat mengembalikan output (nilai).
+3. Jelaskan jenis-jenis parameter di Functions beserta contoh sintaksnya!
+    Positional Parameter (Parameter Posisi)
+    ```dart
+    void sapa(String nama, int umur) {
+    print('Halo $nama, umur Anda $umur');
+    }
+    ```
+    Parameter yang urutannya harus sesuai saat pemanggilan fungsi.
+    Optional Positional Parameter (Parameter Posisi Opsional)
+    ```dart
+    void sapa(String nama, [int? umur]) {
+    print('Halo $nama, umur Anda $umur');
+    }
+    ```
+    Ditulis dalam tanda kurung siku [], boleh diisi atau tidak.
+    Named Parameter (Parameter Bernama)
+    ```dart
+    void sapa({required String nama, int umur = 0}) {
+    print('Halo $nama, umur Anda $umur');
+    }
+    ```
+    Ditulis dalam tanda kurung kurawal {} dan harus disebutkan namanya saat pemanggilan.
+    Default Parameter Value (Nilai Default)
+    ```dart
+    void sapa(String nama, [int umur = 18]) {
+    print('Halo $nama, umur Anda $umur');
+    }
+    ```
+    Parameter opsional (posisi atau bernama) bisa diberi nilai default.
+
+4. Jelaskan maksud Functions sebagai first-class objects beserta contoh sintaknya!
+    Functions sebagai first-class objects di Dart berarti fungsi dapat diperlakukan seperti nilai/data lain: bisa disimpan dalam variabel, dikirim sebagai parameter, atau dikembalikan dari fungsi lain.
+
+    ```dart
+    void sapa() {
+    print('Halo!');
+    }
+    var f = sapa;
+    f(); // Memanggil fungsi lewat variabel
+
+    // Mengirim fungsi sebagai parameter
+    void jalankan(Function fn) {
+    fn();
+    }
+    jalankan(sapa);
+
+    // Mengembalikan fungsi dari fungsi lain
+    Function buatSapa() {
+    return () => print('Hai!');
+    }
+    var fnSapa = buatSapa();
+    fnSapa();
+    ```
+5. Apa itu Anonymous Functions? Jelaskan dan berikan contohnya!
+    Anonymous Functions (fungsi anonim) di Dart adalah fungsi yang tidak memiliki nama. Fungsi ini biasanya digunakan sebagai argument pada fungsi lain, atau untuk operasi sederhana yang hanya dipakai sekali.
+
+    ```dart
+    var list = [1, 2, 3];
+    list.forEach((item) {
+        print(item);
+    });
+    ```
+6. Jelaskan perbedaan Lexical scope dan Lexical closures! Berikan contohnya!
+    Lexical scope adalah aturan di mana variabel hanya bisa diakses di dalam blok kode (scope) tempat variabel itu dideklarasikan.
+
+    Lexical closure adalah fungsi yang “membawa” variabel dari scope di mana fungsi itu dibuat, sehingga bisa mengakses variabel di luar dirinya meskipun sudah berada di scope lain.
+
+    ```dart
+    // Lexical Scope
+    void main() {
+  var nama = 'Satrio';
+  void tampilNama() {
+    print(nama); // Bisa akses 'nama' karena masih dalam scope main
+  }
+  tampilNama();
+}
+    ```
+
+    ```dart
+    // Lexical Closure
+    Function buatCounter() {
+  int count = 0;
+  return () {
+    count++;
+    print(count);
+  };
+}
+
+void main() {
+  var counter = buatCounter();
+  counter(); // 1
+  counter(); // 2
+}
+    ```
+7. Jelaskan dengan contoh cara membuat return multiple value di Functions!
+
+    ```dart
+    (String, int) getData() {
+  String nama = 'Satrio';
+  int nim = 2341720163;
+  return (nama, nim);
+    }
+
+    void main() {
+    var hasil = getData();
+    print('Nama: ${hasil.$1}, NIM: ${hasil.$2}');
+    }
+    ```
+
+    Untuk mengembalikan (return) lebih dari satu nilai dari sebuah function di Dart, kita bisa menggunakan record, list, atau map. Cara paling modern dan mudah dibaca adalah dengan record.
