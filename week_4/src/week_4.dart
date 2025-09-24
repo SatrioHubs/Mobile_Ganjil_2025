@@ -23,34 +23,57 @@ void main(List<String> arguments) {
   // print(names3);
 
   // Praktikum 3
-  var gifts = {
-    'first': 'partridge',
-    'second': 'turtledoves',
-    'fifth': 1,
-  };
-  // Tambahkan nama dan NIM
-  gifts['nama'] = 'Satrio Ahmad Ramadhani';
-  gifts['nim'] = '2341720163';
+  // var gifts = {
+  //   'first': 'partridge',
+  //   'second': 'turtledoves',
+  //   'fifth': 1,
+  // };
+  // gifts['nama'] = 'Satrio Ahmad Ramadhani';
+  // gifts['nim'] = '2341720163';
 
-  var nobleGases = {
-    2: 'helium',
-    10: 'neon',
-    18: 2,
-  };
-  // Tambahkan nama dan NIM
-  nobleGases[99] = 'Satrio Ahmad Ramadhani';
-  nobleGases[100] = '2341720163';
+  // var nobleGases = {
+  //   2: 'helium',
+  //   10: 'neon',
+  //   18: 2,
+  // };
+  // nobleGases[99] = 'Satrio Ahmad Ramadhani';
+  // nobleGases[100] = '2341720163';
 
-  print(gifts);
-  print(nobleGases);
+  // print(gifts);
+  // print(nobleGases);
 
-  var mhs1 = <String, String>{};
-  mhs1['nama'] = 'Satrio Ahmad Ramadhani';
-  mhs1['nim'] = '2341720163';
-  print(mhs1);
+  // var mhs1 = <String, String>{};
+  // mhs1['nama'] = 'Satrio Ahmad Ramadhani';
+  // mhs1['nim'] = '2341720163';
+  // print(mhs1);
 
-  var mhs2 = <int, String>{};
-  mhs2[1] = 'Satrio Ahmad Ramadhani';
-  mhs2[2] = '2341720163';
-  print(mhs2);
+  // var mhs2 = <int, String>{};
+  // mhs2[1] = 'Satrio Ahmad Ramadhani';
+  // mhs2[2] = '2341720163';
+  // print(mhs2);
+
+  //praktikum 4
+  // var list = [1, 2, 3];
+  // var list2 = [0, ...list];
+  // print(list);
+  // print(list2);
+  // print(list2.length);
+
+// var list1 = [1, 2, null, 2341720163];
+// print(list1);
+// var list3 = [0, ...?list1];
+// print(list3.length);
+
+  // bool promoActive = false; // atau false
+  // var nav = ['Home', 'Furniture', 'Plants', if (promoActive) 'Outlet'];
+  // print(nav);
+
+  // var login = 'user'; // atau 'User'
+  // var nav2 = ['Home', 'Furniture', 'Plants', if (login case 'Manager') 'Inventory'];
+  // print(nav2);
+
+  var listOfInts = [1, 2, 3];
+  var listOfStrings = ['#0', for (var i in listOfInts) '#$i'];
+  assert(listOfStrings[1] == '#1');
+  print(listOfStrings);
 }

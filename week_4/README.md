@@ -127,3 +127,88 @@ variable mhs1 dan mhs2 saat melakukan print tidak mengeluarkan apa apa
 Tambahkan elemen nama dan NIM Anda pada tiap variabel di atas (gifts, nobleGases, mhs1, dan mhs2).
 
 ![](img/praktikum3_3-2.png)
+
+
+## Praktikum 4: Eksperimen Tipe Data List: Spread dan Control-flow Operators
+Selesaikan langkah-langkah praktikum berikut ini menggunakan VS Code atau Code Editor favorit Anda.
+
+### Langkah 1:
+Ketik atau salin kode program berikut ke dalam fungsi main().
+
+```dart
+var list = [1, 2, 3];
+var list2 = [0, ...list];
+print(list1);
+print(list2);
+print(list2.length);
+```
+
+### Langkah 2:
+Silakan coba eksekusi (Run) kode pada langkah 1 tersebut. Apa yang terjadi? Jelaskan! Lalu perbaiki jika terjadi error.
+
+pada code ini kita membuat list dimana list2 dapat menggunakan data pada list untuk mengisi didalamnya 
+
+![](img/praktikum4.png)
+
+### Langkah 3:
+Tambahkan kode program berikut, lalu coba eksekusi (Run) kode Anda.
+```dart
+list1 = [1, 2, null];
+print(list1);
+var list3 = [0, ...?list1];
+print(list3.length);
+```
+
+Apa yang terjadi ? Jika terjadi error, silakan perbaiki.
+
+kita melakukan print dengan null aware operator dimana hasil print hanya 1, 2, dan null saja dengan length 4 karena 0 juga termsuk null
+
+![](img/praktikum4_3.png)
+
+Tambahkan variabel list berisi NIM Anda menggunakan Spread Operators. Dokumentasikan hasilnya dan buat laporannya!
+
+![](img/praktikum4_3-2.png)
+
+### Langkah 4:
+Tambahkan kode program berikut, lalu coba eksekusi (Run) kode Anda.
+```dart
+var nav = ['Home', 'Furniture', 'Plants', if (promoActive) 'Outlet'];
+print(nav);
+```
+Apa yang terjadi ? Jika terjadi error, silakan perbaiki. Tunjukkan hasilnya jika variabel promoActive ketika true dan false.
+
+Error, dimana untuk memperbaiki kita harus mendeklarasikan promoActive dengan tipedata boolean
+
+![](img/praktikum4_4_true.png)
+
+![](img/praktikum4_4_false.png)
+
+### Langkah 5:
+Tambahkan kode program berikut, lalu coba eksekusi (Run) kode Anda.
+```dart
+var nav2 = ['Home', 'Furniture', 'Plants', if (login case 'Manager') 'Inventory'];
+print(nav2);
+```
+Apa yang terjadi ? Jika terjadi error, silakan perbaiki. Tunjukkan hasilnya jika variabel login mempunyai kondisi lain.
+
+Error, dimana untuk perbaikan kita perlu menambahkan variable login sebelum nav2
+
+![](img/praktikum4_5_manager.png)
+
+![](img/praktikum4_5_user.png)
+
+### Langkah 6:
+Tambahkan kode program berikut, lalu coba eksekusi (Run) kode Anda.
+```dart
+var listOfInts = [1, 2, 3];
+var listOfStrings = ['#0', for (var i in listOfInts) '#$i'];
+assert(listOfStrings[1] == '#1');
+print(listOfStrings);
+```
+Apa yang terjadi ? Jika terjadi error, silakan perbaiki. Jelaskan manfaat Collection For dan dokumentasikan hasilnya.
+
+pada code ini kita menggunakan collection for untuk menambahkan '#' pada angka di dalam list
+
+Manfaat collection-for di Dart adalah memudahkan pembuatan list (atau set/map) baru dari hasil iterasi koleksi lain secara ringkas dan efisien.
+
+![](img/praktikum4_6.png)
