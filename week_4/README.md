@@ -355,12 +355,12 @@ kita melakukan print sesuai dengan urutan dari variable bukan dari elemen positi
     ```dart
     // Lexical Scope
     void main() {
-  var nama = 'Satrio';
-  void tampilNama() {
-    print(nama); // Bisa akses 'nama' karena masih dalam scope main
-  }
-  tampilNama();
-}
+    var nama = 'Satrio';
+    void tampilNama() {
+      print(nama); // Bisa akses 'nama' karena masih dalam scope main
+    }
+    tampilNama();
+    }
     ```
 
     ```dart
