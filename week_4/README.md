@@ -379,19 +379,20 @@ kita melakukan print sesuai dengan urutan dari variable bukan dari elemen positi
       counter(); // 2
     }
     ```
+    
 7. Jelaskan dengan contoh cara membuat return multiple value di Functions!
 
     ```dart
-    (String, int) getData() {
-  String nama = 'Satrio';
-  int nim = 2341720163;
-  return (nama, nim);
-    }
+      (String, int) getData() {
+      String nama = 'Satrio';
+      int nim = 2341720163;
+      return (nama, nim);
+      }
 
-    void main() {
-    var hasil = getData();
-    print('Nama: ${hasil.$1}, NIM: ${hasil.$2}');
-    }
+      void main() {
+      var hasil = getData();
+      print('Nama: ${hasil.$1}, NIM: ${hasil.$2}');
+      }
     ```
 
     Untuk mengembalikan (return) lebih dari satu nilai dari sebuah function di Dart, kita bisa menggunakan record, list, atau map. Cara paling modern dan mudah dibaca adalah dengan record.
