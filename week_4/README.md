@@ -212,3 +212,71 @@ pada code ini kita menggunakan collection for untuk menambahkan '#' pada angka d
 Manfaat collection-for di Dart adalah memudahkan pembuatan list (atau set/map) baru dari hasil iterasi koleksi lain secara ringkas dan efisien.
 
 ![](img/praktikum4_6.png)
+
+## Praktikum 5: Eksperimen Tipe Data Records
+
+### Langkah 1:
+Ketik atau salin kode program berikut ke dalam fungsi main().
+
+```dart
+var record = ('first', a: 2, b: true, 'last');
+print(record)
+```
+
+### Langkah 2:
+Silakan coba eksekusi (Run) kode pada langkah 1 tersebut. Apa yang terjadi? Jelaskan! Lalu perbaiki jika terjadi error.
+
+![](img/praktikum5.png)
+
+### Langkah 3:
+Tambahkan kode program berikut di luar scope void main(), lalu coba eksekusi (Run) kode Anda.
+
+```dart
+(int, int) tukar((int, int) record) {
+  var (a, b) = record;
+  return (b, a);
+}
+```
+
+Apa yang terjadi ? Jika terjadi error, silakan perbaiki. Gunakan fungsi tukar() di dalam main() sehingga tampak jelas proses pertukaran value field di dalam Records.
+
+tidak terjadi apa apa
+
+![](img/praktikum5_3.png)
+
+![](img/praktikum5_3_2.png)
+
+### Langkah 4:
+Tambahkan kode program berikut di dalam scope void main(), lalu coba eksekusi (Run) kode Anda.
+
+```dart
+(String, int) mahasiswa;
+print(mahasiswa);
+```
+
+Apa yang terjadi ? Jika terjadi error, silakan perbaiki. Inisialisasi field nama dan NIM Anda pada variabel record mahasiswa di atas. Dokumentasikan hasilnya dan buat laporannya!
+
+Error, dimana untuk perbaikan error adalah untuk melakukan deklarasi nilai untuk mahasiswa
+
+![](img/praktikum5_4.png)
+
+### Langkah 5:
+Tambahkan kode program berikut di dalam scope void main(), lalu coba eksekusi (Run) kode Anda.
+
+```dart
+var mahasiswa2 = ('first', a: 2, b: true, 'last');
+
+print(mahasiswa2.$1); // Prints 'first'
+print(mahasiswa2.a); // Prints 2
+print(mahasiswa2.b); // Prints true
+print(mahasiswa2.$2); // Prints 'last'
+```
+
+Apa yang terjadi ? Jika terjadi error, silakan perbaiki. Gantilah salah satu isi record dengan nama dan NIM Anda
+
+kita melakukan print sesuai dengan urutan dari variable bukan dari elemen positional
+
+![](img/praktikum5_5.png)
+
+![](img/praktikum5_6.png)
+
