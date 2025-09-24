@@ -366,18 +366,18 @@ kita melakukan print sesuai dengan urutan dari variable bukan dari elemen positi
     ```dart
     // Lexical Closure
     Function buatCounter() {
-  int count = 0;
-  return () {
-    count++;
-    print(count);
-  };
-}
+      int count = 0;
+      return () {
+        count++;
+        print(count);
+      };
+    }
 
-void main() {
-  var counter = buatCounter();
-  counter(); // 1
-  counter(); // 2
-}
+    void main() {
+      var counter = buatCounter();
+      counter(); // 1
+      counter(); // 2
+    }
     ```
 7. Jelaskan dengan contoh cara membuat return multiple value di Functions!
 
