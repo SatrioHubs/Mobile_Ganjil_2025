@@ -1,16 +1,67 @@
-# hello_worlds
+# Nama : Satrio Ahmad Ramadhani
+# NIM : 2341720163
+# Kelas / No Absen : 3H / 27
+
+## hello_worlds
 
 A new Flutter project.
 
-## Getting Started
+![](img/praktikum3.png)
 
-This project is a starting point for a Flutter application.
+## Praktikum 4: Menerapkan Widget Dasar
+Selesaikan langkah-langkah praktikum berikut ini dengan melanjutkan dari praktikum sebelumnya.
 
-A few resources to get you started if this is your first Flutter project:
+### Langkah 1: Text Widget
+Buat folder baru basic_widgets di dalam folder lib. Kemudian buat file baru di dalam basic_widgets dengan nama text_widget.dart. Ketik atau salin kode program berikut ke project hello_world Anda pada file text_widget.dart.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```dart
+import 'package:flutter/material.dart';
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+class MyTextWidget extends StatelessWidget {
+  const MyTextWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const Text(
+      "Nama saya Fulan, sedang belajar Pemrograman Mobile",
+      style: TextStyle(color: Colors.red, fontSize: 14),
+      textAlign: TextAlign.center);
+  }
+}
+```
+Lakukan import file text_widget.dart ke main.dart, lalu ganti bagian text widget dengan kode di atas. Maka hasilnya seperti gambar berikut. Screenshot hasil milik Anda, lalu dibuat laporan pada file README.md
+
+![](img/praktikum4.png)
+
+### Langkah 2: Image Widget
+Buat sebuah file image_widget.dart di dalam folder basic_widgets dengan isi kode berikut.
+
+```dart
+import 'package:flutter/material.dart';
+
+class MyImageWidget extends StatelessWidget {
+  const MyImageWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const Image(
+      image: AssetImage("logo_polinema.jpg")
+    );
+  }
+}
+```
+
+Lakukan penyesuaian asset pada file pubspec.yaml dan tambahkan file logo Anda di folder assets project hello_world.
+
+```dart
+flutter:
+  assets:
+     - logo_polinema.jpg
+```
+
+Jangan lupa sesuaikan kode dan import di file main.dart kemudian akan tampil gambar seperti berikut.
+
+![](img/praktikum4_2.png)
+
+
+
