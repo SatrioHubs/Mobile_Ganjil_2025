@@ -6,6 +6,9 @@
 
 A new Flutter project.
 
+## Praktikum 2
+![]()
+
 ![](img/praktikum3.png)
 
 ## Praktikum 4: Menerapkan Widget Dasar
