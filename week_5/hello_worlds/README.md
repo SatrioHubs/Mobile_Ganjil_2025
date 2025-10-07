@@ -7,7 +7,7 @@
 A new Flutter project.
 
 ## Praktikum 2
-![]()
+![](img/Screenshot_20251007-203151.jpg)
 
 ![](img/praktikum3.png)
 
