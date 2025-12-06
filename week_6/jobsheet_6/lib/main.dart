@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
           ),
           /* soal 3*/
           Icon(Icons.star, color: Colors.red[500]),
-          const Text('41'),
+          const Text('4.1'),
         ],
       ),
     );
@@ -49,11 +49,31 @@ class MyApp extends StatelessWidget {
       ],
     );
 
+    Widget textSection = Container(
+      padding: const EdgeInsets.all(32),
+      child: const Text(
+        'Gunung Bromo merupakan salah satu destinasi wisata favorit di Indonesia, terutama bagi para pecinta alam dan pendaki gunung. Terletak di Jawa Timur, gunung ini menawarkan pemandangan yang menakjubkan dengan lautan pasir yang luas dan kawah aktif yang masih mengeluarkan asap. Selain itu, matahari terbit di Gunung Bromo adalah salah satu momen paling indah yang dapat disaksikan, memberikan pengalaman yang tak terlupakan bagi para pengunjungnya.',
+        softWrap: true,
+      ),
+    );
+
     return MaterialApp(
-      title: 'Flutter layout: Nama dan NIM Anda',
+      title: 'Flutter layout: Satrio Ahmad Ramadhani - 2341720163',
       home: Scaffold(
         appBar: AppBar(title: const Text('Flutter layout demo')),
-        body: Column(children: [titleSection, buttonSection]),
+        body: ListView(
+          children: [
+            Image.asset(
+              'images/Aerial view of Mount Bromo at sunris.jpg',
+              width: 600,
+              height: 240,
+              fit: BoxFit.cover,
+            ),
+            titleSection,
+            buttonSection,
+            textSection,
+          ],
+        ),
       ),
     );
   }
