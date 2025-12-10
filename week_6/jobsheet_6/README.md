@@ -80,10 +80,10 @@ Pada langkah terakhir ini, atur semua elemen dalam ListView, bukan Column, karen
 ![](img/p4l3.png)
 
 tampilan akhirnya akan terlihat seperti ini : 
-![](img/Gunung.png)
+![](img/bromo.png)
 
 Tugas Praktikum : 
-https://github.com/Ruphasa/Mobile_25-26/tree/main/codelab06_dart/basic_layout_flutter
+https://github.com/SatrioHubs/Mobile_Ganjil_2025/tree/main/week_6/basic_layout_flutter
 
 ## Praktikum 5
 
@@ -123,4 +123,4 @@ dengan hasil akhirnya akan terlihat seperti ini
 ## Tugas Praktikum 2
 
 tampilan final akan terlihat seperti berikut : 
-![](img/belanjaEdited.gif)
+![](img/belanjaUpdated.gif)
