@@ -33,6 +33,32 @@ class FuturePage extends StatefulWidget {
 class _FuturePageState extends State<FuturePage> {
   String result = '';
 
+  Future returnOneAsync() async {
+    await Future.delayed(const Duration(seconds: 3));
+    return 1;
+  }
+
+  Future returnTwoAsync() async {
+    await Future.delayed(const Duration(seconds: 3));
+    return 2;
+  }
+
+  Future returnThreeAsync() async {
+    await Future.delayed(const Duration(seconds: 3));
+    return 3;
+  }
+
+  void count() async {
+    int total = 0;
+    total = await returnOneAsync();
+    int two = await returnTwoAsync();
+    int three = await returnThreeAsync();
+    int sum = total + two + three;
+    setState(() {
+      result = sum.toString();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,19 +70,7 @@ class _FuturePageState extends State<FuturePage> {
             ElevatedButton(
               child: const Text('GO!'),
               onPressed: () {
-                setState(() {});
-                getData()
-                    .then((value) {
-                      var body = value.body.toString();
-                      result = body.length > 450
-                          ? body.substring(0, 450)
-                          : body;
-                      setState(() {});
-                    })
-                    .catchError((_) {
-                      result = 'An error occurred';
-                      setState(() {});
-                    });
+                count();
               },
             ),
             const Spacer(),

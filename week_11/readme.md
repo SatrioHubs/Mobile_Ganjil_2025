@@ -134,3 +134,93 @@ Tambahkan **nama panggilan Anda** pada `title` app sebagai identitas hasil peker
 
 ---
 
+# Laporan Praktikum 2
+
+## Pemrograman Asynchronous Flutter — Await/Async
+
+## Kode Class `_FuturePageState`
+
+```dart
+class _FuturePageState extends State<FuturePage> {
+  String result = '';
+
+  Future returnOneAsync() async {
+    await Future.delayed(const Duration(seconds: 3));
+    return 1;
+  }
+
+  Future returnTwoAsync() async {
+    await Future.delayed(const Duration(seconds: 3));
+    return 2;
+  }
+
+  Future returnThreeAsync() async {
+    await Future.delayed(const Duration(seconds: 3));
+    return 3;
+  }
+
+  void count() async {
+    int  = await returnOneAsync();
+    int two = await returnTwoAsync();
+    int three = await returnThreeAsync();
+    int sum = one + two + three;
+    setState(() {
+      result = sum.toString();
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Back from the Future')),
+      body: Center(
+        child: Column(
+          children: [
+            const Spacer(),
+            ElevatedButton(
+              child: const Text('GO!'),
+              onPressed: () { count(); }
+            ),
+            const Spacer(),
+            Text(result),
+            const Spacer(),
+            const CircularProgressIndicator(),
+            const Spacer(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+
+![](img/praktikum2.gif)
+
+---
+
+## Soal Praktikum
+
+**Soal 4:**
+Buat function dalam class `_FuturePageState` yang sequential menggunakan async dan await sehingga:
+
+- Method count akan memanggil fungsi `returnOneAsync`, `returnTwoAsync`, dan `returnThreeAsync` secara berurutan dengan perintah `await` menggunakan lama delay 3 detik masing-masing.
+- Hasil penjumlahan ketiga fungsi tersebut disimpan ke dalam variabel hasil (`result`) dan dilakukan update ke UI dengan setState.
+
+```dart
+  void count() async {
+    final results = await Future.wait<int>([
+      returnOneAsync(),
+      returnTwoAsync(),
+      returnThreeAsync(),
+    ]);
+
+    final sum = results.fold<int>(0, (prev, element) => prev + element);
+
+    setState(() {
+      result = sum.toString();
+    });
+  }
+```
+
+---
+
