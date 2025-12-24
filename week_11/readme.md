@@ -633,3 +633,84 @@ class MyApp extends StatelessWidget {
 ![](img/praktikum6.gif)
 
 ***
+
+***
+
+## Kode Lengkap Praktikum 7 — geolocation.dart
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
+
+class LocationScreen extends StatefulWidget {
+  const LocationScreen({super.key});
+
+  @override
+  State<LocationScreen> createState() => _LocationScreenState();
+}
+
+class _LocationScreenState extends State<LocationScreen> {
+  late Future<Position> position;
+
+  Future<Position> getPosition() async {
+    await Geolocator.isLocationServiceEnabled();
+    await Future.delayed(const Duration(seconds: 3));
+    Position position = await Geolocator.getCurrentPosition();
+    return position;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    position = getPosition();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Current Location')),
+      body: Center(
+        child: FutureBuilder(
+          future: position,
+          builder: (BuildContext context, AsyncSnapshot<Position> snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const CircularProgressIndicator();
+            } else if (snapshot.connectionState == ConnectionState.done) {
+              return Text(snapshot.data.toString());
+            } else {
+              return const Text('');
+            }
+          },
+        ),
+      ),
+    );
+  }
+}
+```
+
+***
+
+## Soal Praktikum 7
+
+**Soal 13**  
+- Apakah ada perbedaan UI dengan praktikum sebelumnya? Mengapa demikian?
+  - ada perbedaan animasi loading dan clean code.
+  - pada backend ada await jika belum connect
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Commit dengan pesan "**W11: Soal 13**".
+![](img/praktikum7.gif)
+
+***
+
+```dart
+else if (snapshot.connectionState == ConnectionState.done) {
+  if (snapshot.hasError) {
+    return const Text('Something terrible happened!');
+  }
+  return Text(snapshot.data.toString());
+}
+```
+
+jujur saya masih belum tau gunanya ini apa karena sudah ada handle await dan notif bawaan flutter yang menyuruh user menyalakan gpsnya. mungkin ini akan trigger jika device yang di run tidak memiliki gps
+
+***
+
