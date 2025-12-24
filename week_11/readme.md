@@ -519,3 +519,117 @@ class _FuturePageState extends State<FuturePage> {
 
 ***
 
+## laporan Praktikum 6
+
+### Persiapan Project
+
+1. **Install plugin geolocator:**
+   ```bash
+   flutter pub add geolocator
+   ```
+
+2. **Tambahkan permission GPS pada Android:**
+   Tambahkan pada `android/app/src/main/AndroidManifest.xml`:
+   ```xml
+   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+   <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+   ```
+   Untuk iOS, tambahkan di `Info.plist`:
+   ```xml
+   <key>NSLocationWhenInUseUsageDescription</key>
+   <string>This app needs to access your location</string>
+   ```
+
+***
+
+## geolocation.dart
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
+
+class LocationScreen extends StatefulWidget {
+  const LocationScreen({super.key});
+
+  @override
+  State<LocationScreen> createState() => _LocationScreenState();
+}
+
+class _LocationScreenState extends State<LocationScreen> {
+  String myPosition = '';
+  @override
+  void initState() {
+    super.initState();
+    getPosition().then((Position myPos) {
+      myPosition =
+        'Latitude: ${myPos.latitude.toString()} - Longitude: ${myPos.longitude.toString()}';
+      setState(() {
+        myPosition = myPosition;
+      });
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Current Location')),
+      body: Center(child: Text(myPosition)),
+    );
+  }
+
+  Future<Position> getPosition() async {
+    await Geolocator.requestPermission();
+    await Geolocator.isLocationServiceEnabled();
+    Position? position =
+      await Geolocator.getCurrentPosition();
+    return position;
+  }
+}
+
+```
+
+***
+
+## main.dart (memanggil LocationScreen)
+
+```dart
+import 'package:flutter/material.dart';
+import 'geolocation.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Aplikasi Lokasi - [Nama Panggilan Anda]',
+      home: const LocationScreen(),
+    );
+  }
+}
+```
+
+***
+
+## Soal Praktikum
+
+**Soal 11**
+- Tambahkan nama panggilan Anda pada setiap properti `title` aplikasi, baik di LocationScreen maupun main.dart.
+
+**Soal 12**
+- Jika animasi loading tidak tampil, tambahkan delay pada method `getPosition()`.
+```dart
+    await Future.delayed(const Duration(seconds: 3));
+```
+- Apakah Anda mendapatkan koordinat GPS ketika run di browser? Mengapa demikian?
+![](img/soal12.gif)
+  - bisa dengan akurat, kebetulan laptop saya punya GPS
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Commit dengan pesan "**W11: Soal 12**".
+
+![](img/praktikum6.gif)
+
+***
