@@ -232,3 +232,48 @@ class NumberStream {
   }
 ```
 ---
+
+## Praktikum 3: Injeksi Data ke Streams
+
+### Soal Praktikum
+
+**Soal 8:**
+
+- Jelaskan maksud kode langkah 1-3 tersebut!
+  - penerapan transform
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+![](img/praktikum3.gif)
+
+
+### Code Final
+
+**main.dart (tambahan variabel dan initState):**
+
+```dart
+late StreamTransformer transformer;
+
+@override
+void initState() {
+  super.initState();
+  transformer = StreamTransformer<int, int>.fromHandlers(
+    handleData: (value, sink) {
+      sink.add(value * 10);
+    },
+    handleError: (error, trace, sink) {
+      sink.add(-1);
+    },
+    handleDone: (sink) => sink.close(),
+  );
+
+  stream.transform(transformer).listen((event) {
+      setState(() {
+        lastNumber = event;
+      });
+    }).onError((error) {
+      setState(() {
+        lastNumber = -1;
+      });
+    });
+}
+```
+---

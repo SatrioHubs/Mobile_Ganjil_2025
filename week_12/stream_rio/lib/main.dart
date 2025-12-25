@@ -33,6 +33,9 @@ class _StreamHomePageState extends State<StreamHomePage> {
   late StreamController<int> numberStreamController;
   late NumberStream numberStream;
 
+  // Transformer to multiply numbers by 10 and handle errors
+  late StreamTransformer<int, int> transformer;
+
   // Background color stream
   Color bgColor = Colors.blueGrey;
   late ColorStream colorStream;
@@ -40,14 +43,36 @@ class _StreamHomePageState extends State<StreamHomePage> {
 
   @override
   void initState() {
+    super.initState();
+
+    // Stream transformer per your snippet
+    transformer = StreamTransformer<int, int>.fromHandlers(
+      handleData: (value, sink) {
+        sink.add(value * 10);
+      },
+      handleError: (error, trace, sink) {
+        sink.add(-1);
+      },
+      handleDone: (sink) => sink.close(),
+    );
+
     numberStream = NumberStream();
     numberStreamController = numberStream.controller;
     Stream stream = numberStreamController.stream;
-    stream.listen((event) {
-      setState(() {
-        lastNumber = event;
-      });
-    });
+
+    // Use transformed stream and handle errors
+    stream
+        .transform(transformer)
+        .listen((event) {
+          setState(() {
+            lastNumber = event;
+          });
+        })
+        .onError((error) {
+          setState(() {
+            lastNumber = -1;
+          });
+        });
 
     // Subscribe to color stream so background keeps changing
     colorStream = ColorStream();
@@ -56,8 +81,6 @@ class _StreamHomePageState extends State<StreamHomePage> {
         bgColor = eventColor;
       });
     });
-
-    super.initState();
   }
 
   @override
